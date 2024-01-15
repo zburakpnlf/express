@@ -11,10 +11,10 @@ router.get('/', async (req, res) => {
     const notes = database.collection('notes')
 
     // idが1のドキュメントを取得
-    const query = { id: 2 }
+    const query = { id: 1 }
     const note = await notes.findOne(query)
 
-    res.json(note.title)
+    res.json(note)
 })
 
 module.exports = router
