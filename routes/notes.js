@@ -1,8 +1,9 @@
 var express = require('express')
 var router = express.Router()
+require('dotenv').config()
 
 const { MongoClient } = require('mongodb')
-const uri = "mongodb+srv://oizuiadsxapjbazmebyi:nAUHJraWUrYsAeJjAnBnxPwRE7YGAjzfez2c3Gsx@cluster0.4lozqs7.mongodb.net/?retryWrites=true&w=majority"
+const uri = process.env.MONGODB_URI
 const client = new MongoClient(uri)
 
 router.get('/', async (req, res) => {
